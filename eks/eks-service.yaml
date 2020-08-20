@@ -1,0 +1,19 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: eks-service-eksctl
+  region: "eu-west-1"
+  version: "1.17"
+
+availabilityZones: ["eu-west-1a", "eu-west-1b"]
+
+managedNodeGroups:
+- name: nodegroup
+  desiredCapacity: 1
+  ssh:
+    allow: true
+    publicKeyName: eks-service
+
+secretsEncryption:
+  keyARN: arn:aws:kms:eu-west-1:958582830353:key/ccc98598-8b97-49eb-ba36-047dc9b91f50

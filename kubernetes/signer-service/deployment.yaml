@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: signer-service
+  labels:
+    app: signer-service
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: signer-service
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: signer-service
+    spec:
+      containers:
+      - image: juancarlosfernandez/signer-service:master
+        imagePullPolicy: Always
+        name: signer-service
+        ports:
+        - containerPort: 8080
+          protocol: TCP
