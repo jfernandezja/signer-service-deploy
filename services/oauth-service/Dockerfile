@@ -1,3 +1,3 @@
-FROM oauth-service:latest
+FROM oauth-service:master
 
 COPY config.json /

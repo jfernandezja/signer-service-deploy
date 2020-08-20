@@ -1,3 +1,3 @@
-FROM signer-service:latest
+FROM signer-service:master
 
 COPY config.json /
