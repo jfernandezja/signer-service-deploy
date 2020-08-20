@@ -6,5 +6,4 @@ docker build -t juancarlosfernandez/signer-service:master services/signer-servic
 docker push juancarlosfernandez/oauth-service:master
 docker push juancarlosfernandez/signer-service:master
 
-#kubectl patch deployment oauth-service -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
-#kubectl patch deployment signer-service -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
+kubectl patch deployment signer-service -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
