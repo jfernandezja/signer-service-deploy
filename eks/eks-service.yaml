@@ -2,15 +2,15 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: eks-service-eksctl
+  name: eks-signer-service
   region: "eu-west-1"
   version: "1.17"
 
 availabilityZones: ["eu-west-1a", "eu-west-1b"]
 
 managedNodeGroups:
-- name: nodegroup
-  desiredCapacity: 1
+- name: signer-nodegroup
+  desiredCapacity: 2
   ssh:
     allow: true
     publicKeyName: eks-service
