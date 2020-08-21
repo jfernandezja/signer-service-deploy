@@ -10,7 +10,9 @@ availabilityZones: ["eu-west-1a", "eu-west-1b"]
 
 managedNodeGroups:
 - name: signer-nodegroup
-  desiredCapacity: 2
+  minSize: 1
+  maxSize: 2
+  desiredCapacity: 1
   ssh:
     allow: true
     publicKeyName: eks-service
